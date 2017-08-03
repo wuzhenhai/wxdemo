@@ -1,0 +1,63 @@
+<!--pages/articleDetail/articleDetail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/> 
+<import src="../../weToast/wetoast.wxml"/>
+<!--<text>文章的编号：{{article_id}}</text>-->
+
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+
+<view class="author">
+   <image src="{{articleInfo.author_info.headimgurl}}"></image>
+   <text>{{articleInfo.author_info.nickname}}</text>
+   <text class="tab">作者</text>
+</view>
+<view class="contents" style="margin:5px;min-height:{{windowHeight}}px">
+    <template is="wxParse" data="{{wxParseData:detail.nodes}}"/>
+</view>
+
+<text class="comment_title">评论列表</text>
+
+<view wx:if="{{commentList}}">
+ <view wx:key="comment" wx:for="{{commentList}}" wx:for-item="item" data-comtid="{{item.comment_id}}" bindtap="replyComt">
+ <view style="background-color:#efefef;height:1px;width:100%" ></view>
+    <view class="comment_head comment-time">
+     <image class="img" src="{{item.headimgurl}}"></image>
+     <text>{{item.nickname}}:</text>
+     <text class="time">{{item.addtime_str}}</text>
+    </view>
+    <view class="comment" style="margin-bottom:15px;">
+       <text>{{item.contents}}\n</text>
+       <text class="parent" wx:if="{{item.parent_info}}">{{item.parent_info.nickname}}:{{item.parent_info.contents}}</text>
+    </view>   
+</view>
+</view>
+
+<view wx:else>
+  <text class="comment_no">暂时没有评论</text>
+</view>
+
+<view class="repView">
+  <!--<input type="text"  class="reply" placeholder=" 说点什么..." bindtap="reply"/>-->
+  <text class="reply" bindtap="reply">说点什么...</text>
+  <!--<view>
+    <button size="mini" hover-class="reply-hover" hover-start-time="50" hover-stay-time="100">回复</button>
+  </view>-->
+  
+</view>
+
+
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class="areaView">
+    <textarea type="text" class="txarea" placeholder=" 说点什么..." bindinput="areaInput"/>
+    <view>
+    <button size="mini" loading="{{btnLoading}}" hover-class="reply-hover" hover-start-time="50" hover-stay-time="100" bindtap="doReply">回复</button>
+  </view>
+  </view>
+   
+</view>
+
+<!--<modal hidden="{{hideDialog}}" title="这里是title" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm" no-cancel="{{false}}">
+  这是对话框的内容。
+</modal>-->
+

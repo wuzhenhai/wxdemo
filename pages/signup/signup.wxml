@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+  <!--<view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo2.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo2.nickName}}</text>
+  </view>-->
+  <view>
+       <text>注册</text>
+  </view>
+ <view class="usermotto">
+    <text class="notice">{{notice}}</text>
+  </view>
+  <view class="itemView"><text>用户名：</text>
+     <input class="input" name="userName" placeholder="请输入用户名" placeholder-class="place" bindinput="userNameInput"/>
+  </view>
+  <view class="itemView"><text>密 码：</text>
+      <input class="input" password placeholder="请输入密码" placeholder-class="place" bindinput="passWdInput" />
+  </view>
+  <view class="itemView"><text>验证码：</text>
+    <view class="getv">
+        <input class="input" password placeholder="请输入验证码" placeholder-class="place" bindinput="validInput"/>
+        <button type="default" disabled="{{resend}}" size="mini" class="getValidCode" hover-class="loginBtn-hover" hover-start-time="50" hover-stay-time="400" bindtap="getValidCode">{{getVCode}}</button>
+    </view>
+      
+  </view>
+  <button type="primary" class="loginBtn" hover-class="loginBtn-hover" hover-start-time="50" hover-stay-time="400" bindtap="sign">注册
+</button>
+</view>

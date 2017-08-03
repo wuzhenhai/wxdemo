@@ -1,0 +1,38 @@
+{
+  "pages":[
+    "pages/home/home", 
+    "pages/index/index",
+    "pages/signup/signup",
+    "pages/logs/logs",
+    "pages/setting/setting", 
+    "pages/articleDetail/articleDetail",  
+    "pages/userCenter/userCenter"
+  ],
+
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#F1CBBE",
+    "navigationBarTitleText": "小草阅读",
+    "navigationBarTextStyle":"white"
+  },
+  
+"tabBar": {
+    "color": "#ccc",  
+    "selectedColor": "#F1CBBE",  
+    "borderStyle": "black",  
+    "backgroundColor": "#f9f9f9", 
+  "list": [{
+    "pagePath": "pages/home/home",
+    "text": "首页",
+    "iconPath": "images/ic_homegray.png",
+    "selectedIconPath": "images/ic_homepink.png"
+    },{
+      "pagePath": "pages/userCenter/userCenter",
+      "text": "用户中心",
+      "iconPath": "images/ic_setgray.png",
+      "selectedIconPath": "images/ic_setpink.png"
+    }]
+  }
+
+}
+

@@ -1,0 +1,76 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.loginBtn {
+  margin-top: 20px;
+}
+
+.red{
+  color:#ff0000;
+}
+
+.pink{
+  color: #F1CBBE;
+}
+
+.red_click{
+  color:#aaa;
+}
+
+.loginBtn{
+  width:80%;
+  background-color: #F1CBBE !important;
+}
+
+.itemView{
+  width: 80%;
+}
+
+
+.itemView text{
+  font-size: 30rpx;
+}
+
+.sign{
+  margin-top: 30rpx;
+  color: #F1CBBE;
+  font-size:28rpx;
+}
+
+.loginBtn-hover{
+  opacity: 0.7;
+}
+
+
+.place{
+    color: #f0f0f0;
+}
+
+.backHome{
+   color: #F1CBBE;
+   display: flex;
+   justify-content: center;
+   font-size:28rpx;
+   margin-top: 40rpx;
+   align-items: center;
+}

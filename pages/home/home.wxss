@@ -1,0 +1,69 @@
+/* pages/home/home.wxss */
+
+.line{
+    background-color: #efefef
+}
+
+.small_img{
+    width:20px;
+    height:20px;
+    margin-right:5px;
+    margin-left:5px;
+    /* background-color: #f00;*/
+    vertical-align:middle;
+}
+
+.home_text{
+    color:#9aa0a2;
+    /* background-color: #f00; */
+    vertical-align:middle;
+}
+
+.big_img{
+    width: 100%;
+}
+
+/*.big_img:hover{
+    opacity: 0.5;
+    width: 100%;
+}*/
+
+.big_img_hover{
+    opacity: 0.7;
+}
+
+.slide-image{  
+    width: 100%; 
+}  
+.load-text{
+    display: block;
+    line-height: 40px;
+    font-size: 12px;
+    color: gray;
+    text-align: center;
+}
+/*.scroll{
+    height: 100%;
+}*/
+
+/*.article{
+    width: 48%;
+    float: left;
+}*/
+
+ /*圆点的父元素，用来控制圆点间的间距*/
+/*.wx-swiper-dot:before {
+    width: 30rpx;
+    content: '圆点编码';
+}*/
+
+.wx-swiper-dot:before {
+        width: 100%;
+        display: inline-block;
+        font-size: 56rpx;
+        /*content: '圆点编码';*/
+}
+
+.wx-swiper-dot-active:before {
+            color: black;    
+}

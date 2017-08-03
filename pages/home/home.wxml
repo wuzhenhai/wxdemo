@@ -1,0 +1,42 @@
+<!--pages/home/home.wxml-->
+<view>
+    <loading hidden="{{hidden}}">
+        加载中...
+    </loading>
+    <!--<scroll-view scroll-y="true" style="height:{{pageHeight}}px;" bindscrolltolower="loadMore">-->
+        <swiper indicator-dots="{{indicatorDots}}" style="height:240px;"  
+                autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">  
+            <block wx:key="swp" wx:for="{{imgUrls}}">  
+                <swiper-item>  
+                <!--<navigator url="{{item.link}}" hover-class="navigator-hover">  -->
+                    <image src="{{item.pic}}" class="slide-image" mode="aspectFill" bindtap="articleClick" data-id="{{item.article_id}}"/>  
+                <!--</navigator>   -->
+                </swiper-item>  
+            </block>  
+        </swiper>  
+        <view class="article"  wx:key="artcile" wx:for="{{list}}" wx:for-item="item" data-title="{{item.title}}" style="padding:1%">
+            <view hover="true" hover-class="big_img_hover">
+                <image  class="big_img" src="{{item.big_pic}}" bindtap="articleClick" data-id="{{item.article_id}}" mode="aspectFill"></image>
+            </view>
+            <view  class="eee" > 
+            <view style="margin:5px;font-size:18px">{{item.title}}</view>
+            <view class="line" style="height:1px;line-height:12px;"></view>
+            <view style="margin-top:10px;">
+                <!--<image class="small_img" src="../../images/ic_fenxiangbig.png"></image>
+                <text class="home_text">{{item.share_num}}</text>-->
+                <image class="small_img" src="../../images/ic_image.png"></image>
+                <text class="home_text">{{item.comment_num}}</text>
+                <image wx:if="{{item.is_zan}}" class="small_img" src="../../images/ic_dzyz.png" bindtap="doZan" data-id="{{item.article_id}}"></image>
+                <image wx:else class="small_img" src="../../images/ic_dianzanbig.png" bindtap="doZan" data-id="{{item.article_id}}"></image>
+                <text class="home_text">{{item.zan_num}}</text>
+            </view>
+            <!--<view style="margin:5px;color:red;font-size:6px"> 来源:{{item.source}}</view>-->
+            </view>
+        </view>
+        <view class="line" style="height:40px;line-height:12px;">
+          <text class="load-text">{{load}}</text>
+        </view>
+    <!--</scroll-view>-->
+
+
+</view>
